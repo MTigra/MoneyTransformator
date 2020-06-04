@@ -34,7 +34,7 @@ public class ForexController {
 
     RBKCurrency response = responseEntity.getBody();
 
-    ExchangeValue exchangeValue = new ExchangeValue(from,to,new BigDecimal(32));
+    ExchangeValue exchangeValue = new ExchangeValue(from,to,response.getData().getRate1());
 
     
     exchangeValue.setPort(

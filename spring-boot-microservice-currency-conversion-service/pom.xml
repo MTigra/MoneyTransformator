@@ -45,6 +45,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
@@ -81,6 +85,13 @@
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-spring-boot-bom</artifactId>
                 <version>${azure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-sleuth</artifactId>
+                <version>${spring-cloud-sleuth.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

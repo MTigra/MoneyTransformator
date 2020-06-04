@@ -66,6 +66,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -81,6 +85,13 @@
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-spring-boot-bom</artifactId>
                 <version>${azure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-sleuth</artifactId>
+                <version>${spring-cloud-sleuth.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
