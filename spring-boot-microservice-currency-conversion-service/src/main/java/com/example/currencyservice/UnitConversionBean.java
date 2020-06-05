@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 public class UnitConversionBean {
   private String from;
   private String to;
-  private BigDecimal conversionMultiple;
+  private String conversionMultiple;
   private BigDecimal quantity;
-  private BigDecimal totalCalculatedAmount;
+  private String totalCalculatedAmount;
   private String ip;
   private int port;
 
@@ -14,8 +14,8 @@ public class UnitConversionBean {
 
   }
 
-  public UnitConversionBean(String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-                            BigDecimal totalCalculatedAmount,  String ip, int port) {
+  public UnitConversionBean(String from, String to, String conversionMultiple, BigDecimal quantity,
+                            String totalCalculatedAmount,  String ip, int port) {
     super();
     this.from = from;
     this.to = to;
@@ -43,11 +43,11 @@ public class UnitConversionBean {
     this.to = to;
   }
 
-  public BigDecimal getConversionMultiple() {
+  public String getConversionMultiple() {
     return conversionMultiple;
   }
 
-  public void setConversionMultiple(BigDecimal conversionMultiple) {
+  public void setConversionMultiple(String conversionMultiple) {
     this.conversionMultiple = conversionMultiple;
   }
 
@@ -59,11 +59,11 @@ public class UnitConversionBean {
     this.quantity = quantity;
   }
 
-  public BigDecimal getTotalCalculatedAmount() {
+  public String getTotalCalculatedAmount() {
     return totalCalculatedAmount;
   }
 
-  public void setTotalCalculatedAmount(BigDecimal totalCalculatedAmount) {
+  public void setTotalCalculatedAmount(String totalCalculatedAmount) {
     this.totalCalculatedAmount = totalCalculatedAmount;
   }
 

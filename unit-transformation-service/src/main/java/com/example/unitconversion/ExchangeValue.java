@@ -14,7 +14,7 @@ public class ExchangeValue {
    // @Column(name = "currency_to")
     private String to;
 
-    private BigDecimal conversionMultiple;
+    private String conversionMultiple;
     private String source;
     private int port;
 
@@ -28,12 +28,24 @@ public class ExchangeValue {
 
     private String ip;
 
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public void setConversionMultiple(String conversionMultiple) {
+        this.conversionMultiple = conversionMultiple;
+    }
+
     public ExchangeValue() {
 
     }
 
 
-    public ExchangeValue(String from, String to, BigDecimal conversionMultiple) {
+    public ExchangeValue(String from, String to, String conversionMultiple) {
         super();
         //this.id = id;
         this.from = from;
@@ -53,7 +65,7 @@ public class ExchangeValue {
         return to;
     }
 
-    public BigDecimal getConversionMultiple() {
+    public String getConversionMultiple() {
         return conversionMultiple;
     }
 
