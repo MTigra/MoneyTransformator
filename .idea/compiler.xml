@@ -6,22 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-microservice-currency-conversion" />
         <module name="spring-boot-microservice-forex-service" />
         <module name="spring-boot-microservice-eureka-naming-server" />
-        <module name="spring-boot-microservice-currency-conversion" />
+        <module name="forex-service" />
+        <module name="currency-service" />
+        <module name="unit-transformation-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="currency-service" target="1.8" />
+      <module name="forex-service" target="1.8" />
       <module name="spring-boot-microservice-currency-conversion" target="1.8" />
       <module name="spring-boot-microservice-eureka-naming-server" target="1.8" />
       <module name="spring-boot-microservice-forex-service" target="1.8" />
+      <module name="unit-transformation-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="currency-service" options="-parameters" />
+      <module name="forex-service" options="-parameters" />
       <module name="spring-boot-microservice-currency-conversion" options="-parameters" />
       <module name="spring-boot-microservice-eureka-naming-server" options="-parameters" />
       <module name="spring-boot-microservice-forex-service" options="-parameters" />
+      <module name="unit-transformation-service" options="-parameters" />
     </option>
   </component>
 </project>
