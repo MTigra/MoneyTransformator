@@ -22,7 +22,8 @@ public class CurrencyConversionBean {
     this.conversionMultiple = conversionMultiple;
     this.quantity = quantity;
     this.totalCalculatedAmount = totalCalculatedAmount;
-
+    this.ip = ip;
+    this.port = port;
   }
 
   public String getFrom() {
