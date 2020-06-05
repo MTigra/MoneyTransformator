@@ -15,6 +15,6 @@ public interface UnitExchangeServiceProxy {
     @GetMapping("/unit-convert/from/{from}/to/{to}")
     public UnitConversionBean retrieveExchangeValue
             (@PathVariable("from") String from, @PathVariable("to") String to,
-             @RequestParam("source") BigDecimal source);
+             @RequestParam("source") String source);
 
 }

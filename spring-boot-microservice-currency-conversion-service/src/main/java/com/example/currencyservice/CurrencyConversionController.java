@@ -38,7 +38,7 @@ public class CurrencyConversionController {
     public UnitConversionBean converUnitFeign(@PathVariable String from, @PathVariable String to,
                                               @PathVariable BigDecimal quantity) {
 
-        UnitConversionBean response = unitProxy.retrieveExchangeValue(from, to, quantity);
+        UnitConversionBean response = unitProxy.retrieveExchangeValue(from, to, quantity.toString());
 
         logger.info("", response);
 

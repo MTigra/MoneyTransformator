@@ -19,9 +19,9 @@ public class ForexController {
 
     @GetMapping("/unit-convert/from/{from}/to/{to}")
     public ExchangeValue retrieveExchangeValue
-            (@PathVariable String from, @PathVariable String to, @RequestParam("source") BigDecimal source) throws UnknownHostException {
+            (@PathVariable String from, @PathVariable String to, @RequestParam("source") String source) throws UnknownHostException {
 
-        ExchangeValue exchangeValue = new ExchangeValue(from, to, UnitConverter.convert(from, to, source).toString());
+        ExchangeValue exchangeValue = new ExchangeValue(from, to, UnitConverter.convert(from, to, new BigDecimal(source)).toString());
 
         exchangeValue.setPort(
                 Integer.parseInt(environment.getProperty("local.server.port")));
