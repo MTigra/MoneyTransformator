@@ -1,4 +1,6 @@
 package com.example.forex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,8 @@ import java.util.Map;
 
 @RestController
 public class ForexController {
-  
+
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
   @Autowired
   private Environment environment;
 
@@ -37,11 +40,12 @@ public class ForexController {
     RBKCurrency response = responseEntity.getBody();
 
     ExchangeValue exchangeValue = new ExchangeValue(from,to,response.getData().getRate1());
-
+    logger.info( "IP: "  +  InetAddress.getLocalHost().getHostAddress());
     exchangeValue.setIp(InetAddress.getLocalHost().getHostAddress());
     exchangeValue.setPort(
         Integer.parseInt(environment.getProperty("local.server.port")));
-    
+
+    logger.info("",exchangeValue);
     return exchangeValue;
   }
 }

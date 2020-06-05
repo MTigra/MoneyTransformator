@@ -31,7 +31,7 @@ public class CurrencyConversionController {
         logger.info("{}", response);
 
         return new CurrencyConversionBean(from, to, response.getConversionMultiple(), quantity,
-                quantity.multiply(response.getConversionMultiple()),response.getIp(), response.getPort());
+                quantity.multiply(response.getConversionMultiple()), response.getIp(), response.getPort());
     }
 
     @GetMapping("unit-convert/from/{from}/to/{to}/quantity/{quantity}")
