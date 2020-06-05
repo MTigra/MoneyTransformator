@@ -1,29 +1,31 @@
 package com.example.currencyservice;
 import java.math.BigDecimal;
 
-public class CurrencyConversionBean {
+public class UnitConversionBean {
   private String from;
   private String to;
   private BigDecimal conversionMultiple;
   private BigDecimal quantity;
   private BigDecimal totalCalculatedAmount;
-  private int port;
   private String ip;
+  private int port;
 
-  public CurrencyConversionBean() {
+  public UnitConversionBean() {
 
   }
 
-  public CurrencyConversionBean(String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-      BigDecimal totalCalculatedAmount, String ip, int port) {
+  public UnitConversionBean(String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
+                            BigDecimal totalCalculatedAmount,  String ip, int port) {
     super();
     this.from = from;
     this.to = to;
     this.conversionMultiple = conversionMultiple;
     this.quantity = quantity;
     this.totalCalculatedAmount = totalCalculatedAmount;
-
+    this.ip = ip;
+    this.port = port;
   }
+
 
   public String getFrom() {
     return from;
