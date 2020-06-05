@@ -19,7 +19,7 @@ public class UnitConverter {
     static BigDecimal KILOMETERS = BigDecimal.valueOf(0.001) ;
 
     static BigDecimal convert(String from, String to, BigDecimal value) {
-        return toMeters(from, value).multiply(getCoefByTag(to));
+        return toMeters(from, value).multiply(getCoefByTag(to)).setScale(11, RoundingMode.CEILING);
     }
 
     private static BigDecimal toMeters(String from, BigDecimal value) {

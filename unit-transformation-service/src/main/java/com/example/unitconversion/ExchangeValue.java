@@ -18,15 +18,15 @@ public class ExchangeValue {
     private String source;
     private int port;
 
-    public String getInfo() {
-        return info;
+    public String getIp() {
+        return ip;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
-    private String info;
+    private String ip;
 
     public ExchangeValue() {
 

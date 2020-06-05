@@ -26,13 +26,7 @@ public class ForexController {
         exchangeValue.setPort(
                 Integer.parseInt(environment.getProperty("local.server.port")));
 
-        exchangeValue.setInfo(
-                "environment.getProperty(\"server.port\"); ->" + environment.getProperty("server.port") + "\n" +
-                        "InetAddress.getLocalHost().getHostAddress(); ->" + InetAddress.getLocalHost().getHostAddress() + "\n" +
-                        "InetAddress.getLocalHost().getHostName(); ->" + InetAddress.getLocalHost().getHostName() + "\n" +
-                        "InetAddress.getLoopbackAddress().getHostAddress(); ->" + InetAddress.getLoopbackAddress().getHostAddress() + "\n" +
-                        "InetAddress.getLoopbackAddress().getHostName(); ->" + InetAddress.getLoopbackAddress().getHostName() + "\n"
-        );
+        exchangeValue.setIp(InetAddress.getLocalHost().getHostAddress());
 
         return exchangeValue;
     }
