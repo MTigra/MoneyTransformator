@@ -34,11 +34,11 @@ public class CurrencyConversionController {
                 quantity.multiply(response.getConversionMultiple()),response.getIp(), response.getPort());
     }
 
-    @GetMapping("unit-convert/from/{from}/to/{to}/quantity/{quantity}/source/{source}")
+    @GetMapping("unit-convert/from/{from}/to/{to}/quantity/{quantity}")
     public UnitConversionBean converUnitFeign(@PathVariable String from, @PathVariable String to,
-                                              @PathVariable BigDecimal quantity, @PathVariable String source) {
+                                              @PathVariable BigDecimal quantity) {
 
-        UnitConversionBean response = unitProxy.retrieveExchangeValue(from, to, source);
+        UnitConversionBean response = unitProxy.retrieveExchangeValue(from, to, quantity);
 
         logger.info("", response);
 

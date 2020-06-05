@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
+
 
 @FeignClient(name = "unit-service")
 @RibbonClient(name = "unit-service")
@@ -13,6 +15,6 @@ public interface UnitExchangeServiceProxy {
     @GetMapping("/unit-convert/from/{from}/to/{to}")
     public UnitConversionBean retrieveExchangeValue
             (@PathVariable("from") String from, @PathVariable("to") String to,
-             @RequestParam("source") String source);
+             @RequestParam("source") BigDecimal source);
 
 }
