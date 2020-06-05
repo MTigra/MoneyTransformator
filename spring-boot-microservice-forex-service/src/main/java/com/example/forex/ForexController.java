@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +22,7 @@ public class ForexController {
 
   @GetMapping("/currency-exchange/from/{from}/to/{to}")
   public ExchangeValue retrieveExchangeValue
-    (@PathVariable String from, @PathVariable String to, @RequestParam("source") String source){
+    (@PathVariable String from, @PathVariable String to, @RequestParam("source") String source) throws UnknownHostException {
 
     Map<String, String> uriVariables = new HashMap<>();
     uriVariables.put("currency_from", from);
@@ -36,7 +38,7 @@ public class ForexController {
 
     ExchangeValue exchangeValue = new ExchangeValue(from,to,response.getData().getRate1());
 
-    
+    exchangeValue.setIp(InetAddress.getLocalHost().getHostAddress());
     exchangeValue.setPort(
         Integer.parseInt(environment.getProperty("local.server.port")));
     

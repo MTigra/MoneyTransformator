@@ -43,7 +43,7 @@ public class CurrencyConversionController {
         logger.info("", response);
 
         return new UnitConversionBean(from, to, response.getConversionMultiple(),
-                quantity, response.getConversionMultiple(), response.getIp(),response.getPort());
+                quantity, response.getConversionMultiple(), response.getIp(), response.getPort());
     }
 
 }
