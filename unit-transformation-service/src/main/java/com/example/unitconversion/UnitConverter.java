@@ -23,7 +23,7 @@ public class UnitConverter {
     }
 
     private static BigDecimal toMeters(String from, BigDecimal value) {
-        return getCoefByTag(from).setScale(100, RoundingMode.CEILING).divide(value, RoundingMode.CEILING);
+        return value.setScale(100, RoundingMode.CEILING).divide(getCoefByTag(from), RoundingMode.CEILING);
     }
 
     private static BigDecimal getCoefByTag(String tag) {

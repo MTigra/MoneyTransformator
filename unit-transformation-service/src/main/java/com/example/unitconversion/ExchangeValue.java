@@ -18,6 +18,16 @@ public class ExchangeValue {
     private String source;
     private int port;
 
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    private String info;
+
     public ExchangeValue() {
 
     }
